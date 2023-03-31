@@ -2,7 +2,7 @@ name: Update MLH/techtogether.io
 on:
   push:
     branches:
-      - main
+      - vidushi-deploy
 jobs:
   update:
     runs-on: ubuntu-latest
