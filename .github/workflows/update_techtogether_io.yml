@@ -7,7 +7,7 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: webfactory/ssh-agent@v0.5.4
+      - uses: webfactory/ssh-agent@v0.7.0
         with:
           ssh-private-key: ${{ secrets.TTINC_DEPLOY_KEY }}
 
