@@ -33,6 +33,7 @@ jobs:
                   FOLDER: dist
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   MESSAGE: "Build: ({sha}) {msg}"
+                  
 #     update:
 #         needs: build
 #         runs-on: ubuntu-latest
