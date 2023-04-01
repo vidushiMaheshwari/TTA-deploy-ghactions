@@ -17,8 +17,8 @@ jobs:
               env:
                 CI: false
 
-#             - name: Include public folder
-#               run: mv public/* dist
+            - name: Include public folder
+              run: mv public/* dist
 
 #             - name: Include workflows
 #               run: |
