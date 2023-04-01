@@ -29,10 +29,11 @@ jobs:
               uses: s0/git-publish-subdir-action@develop
               env:
                   REPO: self
-                  BRANCH: main
+                  BRANCH: mid
                   FOLDER: dist
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   MESSAGE: "Build: ({sha}) {msg}"
+                  SKIP_EMPTY_COMMITS: true
                   
                   
                   
