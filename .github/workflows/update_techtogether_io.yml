@@ -20,6 +20,7 @@ jobs:
 
       - name: Update module
         run: |
+          git submodule set-branch --branch main -- "atlanta/2023"
           git submodule update --init --recursive --checkout -f --remote -- "atlanta/2023"
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
