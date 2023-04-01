@@ -18,7 +18,9 @@ jobs:
                 CI: false
 
             - name: Include public folder
-              run: mv public/* dist
+              run: | 
+                  mkdir -p dist
+                  mv public/* dist
 
 #             - name: Include workflows
 #               run: |
