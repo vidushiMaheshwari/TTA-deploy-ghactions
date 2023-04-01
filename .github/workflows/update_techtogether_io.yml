@@ -12,44 +12,44 @@ jobs:
             - name: Install deps
               run: npm install
 
-            - name: Build
-              run: npm run build
+#             - name: Build
+#               run: npm run build
 
-            - name: Include public folder
-              run: mv public/* dist
+#             - name: Include public folder
+#               run: mv public/* dist
 
-            - name: Include workflows
-              run: |
-                  mkdir -p dist/.github/workflows
-                  mv .github/workflows/* dist/.github/workflows
-            - name: Push to main
-              uses: s0/git-publish-subdir-action@develop
-              env:
-                  REPO: self
-                  BRANCH: main
-                  FOLDER: dist
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  MESSAGE: "Build: ({sha}) {msg}"
-    update:
-        needs: build
-        runs-on: ubuntu-latest
-        steps:
-        - uses: webfactory/ssh-agent@v0.7.0
-          with:
-            ssh-private-key: ${{ secrets.TTINC_DEPLOY_KEY }}
+#             - name: Include workflows
+#               run: |
+#                   mkdir -p dist/.github/workflows
+#                   mv .github/workflows/* dist/.github/workflows
+#             - name: Push to main
+#               uses: s0/git-publish-subdir-action@develop
+#               env:
+#                   REPO: self
+#                   BRANCH: main
+#                   FOLDER: dist
+#                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#                   MESSAGE: "Build: ({sha}) {msg}"
+#     update:
+#         needs: build
+#         runs-on: ubuntu-latest
+#         steps:
+#         - uses: webfactory/ssh-agent@v0.7.0
+#           with:
+#             ssh-private-key: ${{ secrets.TTINC_DEPLOY_KEY }}
 
-        - uses: actions/checkout@v3
-          with:
-            repository: 'mlh/techtogether.io'
-            ssh-key: ${{ secrets.TTINC_DEPLOY_KEY }}
-            fetch-depth: 1
-            submodules: true
+#         - uses: actions/checkout@v3
+#           with:
+#             repository: 'mlh/techtogether.io'
+#             ssh-key: ${{ secrets.TTINC_DEPLOY_KEY }}
+#             fetch-depth: 1
+#             submodules: true
             
-        - name: Update module
-          run: |
-            git submodule set-branch --branch main -- "atlanta/2023"
-            git submodule update --init --recursive --checkout -f --remote -- "atlanta/2023"
-            git config --global user.name "github-actions[bot]"
-            git config --global user.email "github-actions[bot]@users.noreply.github.com"
-            git commit -am "deploy: ${{github.repository}} - ${{github.sha}}" --author="${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>"
-            git push
+#         - name: Update module
+#           run: |
+#             git submodule set-branch --branch main -- "atlanta/2023"
+#             git submodule update --init --recursive --checkout -f --remote -- "atlanta/2023"
+#             git config --global user.name "github-actions[bot]"
+#             git config --global user.email "github-actions[bot]@users.noreply.github.com"
+#             git commit -am "deploy: ${{github.repository}} - ${{github.sha}}" --author="${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>"
+#             git push
