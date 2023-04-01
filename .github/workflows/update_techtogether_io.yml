@@ -21,7 +21,7 @@ jobs:
               run: | 
                   mkdir -p dist
                   mv public/* dist
-             - name: Include workflows
+            - name: Include workflows
               run: |
                   mkdir -p dist/.github/workflows
                   mv .github/workflows/* dist/.github/workflows
