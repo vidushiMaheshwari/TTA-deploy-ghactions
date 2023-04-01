@@ -1,8 +1,8 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import classes from "./NavBar.module.css";
 import { Button, Image } from "react-bootstrap";
-import logo from "../../public/tta-logo.png";
-import mlhBadge from "../../public/mlh-badge-2023.svg";
+import logo from "../../assets/tta-logo.png";
+import mlhBadge from "../../assets/mlh-badge-2023.svg";
 import VerticalNavBar from "./VerticalNavBar";
 
 function NavBar() {
@@ -12,7 +12,6 @@ function NavBar() {
   React.useEffect(() => {
     window.addEventListener("resize", () => setWidth(window.innerWidth));
   }, []);
-
 
   if (width > 1000) {
     return (
@@ -55,9 +54,7 @@ function NavBar() {
       </div>
     );
   } else {
-    return (
-        <VerticalNavBar open={open} setOpen={setOpen} />
-    );
+    return <VerticalNavBar open={open} setOpen={setOpen} />;
   }
 }
 

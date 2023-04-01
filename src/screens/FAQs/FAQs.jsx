@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import classes from "./FAQs.module.css";
-import down_arrow from "../../public/down-arrow.png";
-import up_arrow from "../../public/up-arrow.png";
+import down_arrow from "../../assets/down-arrow.png";
+import up_arrow from "../../assets/up-arrow.png";
 import { Image } from "react-bootstrap";
 
 function FAQs() {
@@ -116,8 +116,6 @@ function FAQs() {
             during the event.
           </div>
         </div>
-
-       
       </div>
     </div>
   );

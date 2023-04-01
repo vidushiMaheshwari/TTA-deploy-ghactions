@@ -1,7 +1,7 @@
 import React from "react"
 import classes from "./About.module.css";
 import { Image } from "react-bootstrap";
-import logo from "../../public/tta-logo.png";
+import logo from "../../assets/tta-logo.png";
 
 function About() {
     return (
